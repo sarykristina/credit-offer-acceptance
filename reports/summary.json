@@ -1,0 +1,7 @@
+{
+  "cv_mean_blend_auc": 0.7742117360656391,
+  "cv_mean_lgbm_auc": 0.7704350175226439,
+  "cv_mean_cb_auc": 0.7714966151109557,
+  "model": "LightGBM(GOSS, native categorical) + CatBoost blend, OOF target encoding, time-based CV",
+  "output": "submissions/submission.csv"
+}
