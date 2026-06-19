@@ -154,7 +154,7 @@ def fit_target_encoding(train_df: pd.DataFrame, y: pd.Series, columns: list[str]
 
 def oof_target_encoding(df: pd.DataFrame, y: pd.Series, columns: list[str], n_splits: int = 5, smoothing: float = 80.0, seed: int = 7) -> pd.DataFrame:
     rng = np.random.RandomState(seed)
-    idx = df.index.to_numpy()
+    idx = np.array(df.index, copy=True)
     rng.shuffle(idx)
     folds = np.array_split(idx, n_splits)
     out = pd.DataFrame(index=df.index, columns=[f"{c}_te" for c in columns], dtype=float)
